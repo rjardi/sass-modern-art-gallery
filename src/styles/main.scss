@@ -1,0 +1,129 @@
+$font-stack: 'Montserrat', Arial, sans-serif;
+$black: #181818;
+$white: #fff;
+$tan: #c7a27c;
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+  background: $white;
+  color: $black;
+}
+
+header {
+  background: $black;
+  color: $white;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 35vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-left: 10vw;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  margin-left: 35vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  }
+}
+
+.gallery-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 2rem;
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 350px;
+    color: #444;
+  }
+  .location-btn {
+    display: flex;
+    align-items: center;
+    background: $black;
+    color: $white;
+    border: none;
+    font-size: 1rem;
+    padding: 1rem 2rem 1rem 1.5rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-family: $font-stack;
+    font-weight: 600;
+    border-radius: 0;
+    transition: background 0.2s;
+    span.arrow {
+      background: $tan;
+      color: $white;
+      padding: 1rem 1.2rem;
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      border-radius: 0 2px 2px 0;
+    }
+    &:hover, &:focus {
+      background: $tan;
+      outline: 2px solid $black;
+      color: $black;
+      span.arrow {
+        background: $black;
+        color: $tan;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    width: 100vw;
+    height: 20vh;
+    position: static;
+    h1 {
+      margin-left: 2vw;
+      font-size: 2.5rem;
+    }
+  }
+  main {
+    flex-direction: column;
+    margin-left: 0;
+    align-items: stretch;
+  }
+  .gallery-image, .gallery-info {
+    flex: none;
+    padding: 2rem 0;
+    align-items: center;
+    text-align: center;
+  }
+  .gallery-info {
+    padding-left: 0;
+    p {
+      margin: 0 auto 2rem auto;
+    }
+  }
+}
