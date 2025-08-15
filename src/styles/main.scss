@@ -1,99 +1,125 @@
 $font-stack: 'Montserrat', Arial, sans-serif;
-$black: #181818;
+$font-paragraph: 'Outfit';
+$font-headings: 'Big Shoulders';
+$almost-black: #151515;
+$black: black;
+$dark-grey: #444444;
 $white: #fff;
-$tan: #c7a27c;
+$gold: #D5966C;
 
 body {
   margin: 0;
   font-family: $font-stack;
-  background: $white;
   color: $black;
-}
 
-header {
-  background: $black;
-  color: $white;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  width: 35vw;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-left: 10vw;
-    line-height: 1;
-    letter-spacing: 2px;
-  }
+  background:
+  linear-gradient(to right, $almost-black 0 33.33vw, transparent 33.33vw) no-repeat,
+  // linear-gradient(to right, $almost-black 0 100%) no-repeat,
+  url("../assets/gallery-main.png") no-repeat;
+
+  background-size: 100% 800px, 540px 800px;
+  background-position: 0 42px, 33.33vw 42px;
+
 }
 
 main {
+  max-width: 1110px;
+  margin: auto;
+}
+
+.hero {
+  margin-top: 230px;
   display: flex;
   flex-direction: row;
-  min-height: 100vh;
-  margin-left: 35vw;
-  align-items: center;
-  justify-content: center;
+  // padding: 190px 165px;
+  justify-content: space-between;
+  
 }
-
-.gallery-image {
-  flex: 1;
+  
+.hero-title {
+  // flex: 1;
+  color: $white;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    max-width: 400px;
-    height: auto;
-    border-radius: 2px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+
+
+  
+  h1 {
+    /* MODERN ART GALLERY */
+    margin: 0;
+    font-family: $font-headings;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 88px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: 2px;
   }
 }
 
-.gallery-info {
-  flex: 1;
+.hero-action {
+  // flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  padding-left: 2rem;
+
   p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+
+    margin: 0;
     max-width: 350px;
-    color: #444;
+    color: $dark-grey;
+    font-family: $font-paragraph;
+    font-style: normal;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin-bottom: 4rem;
+
   }
+
   .location-btn {
     display: flex;
     align-items: center;
-    background: $black;
-    color: $white;
     border: none;
-    font-size: 1rem;
-    padding: 1rem 2rem 1rem 1.5rem;
+    flex-direction: row;
+    height: 72px;
     cursor: pointer;
-    letter-spacing: 2px;
-    font-family: $font-stack;
     font-weight: 600;
     border-radius: 0;
     transition: background 0.2s;
-    span.arrow {
-      background: $tan;
+    padding: 0;
+    // padding: 1.5rem 0rem;
+    background: $black;
+    font-family: $font-headings;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: 3.64px;
+    
+    div.text {
       color: $white;
-      padding: 1rem 1.2rem;
-      margin-left: 1rem;
-      font-size: 1.2rem;
-      border-radius: 0 2px 2px 0;
+      padding: 0 1.5rem;
     }
+
+    div.arrow {
+      display: flex;
+      background: $gold;
+      color: $white;
+      align-items: center;
+      justify-content: center;   
+      height: 100%;
+      width: 56px;
+    }
+
     &:hover, &:focus {
-      background: $tan;
-      outline: 2px solid $black;
+      background: $gold;
+      outline: 1px solid $black;
       color: $black;
-      span.arrow {
+      
+      div.arrow {
         background: $black;
-        color: $tan;
+        color: $gold;
       }
     }
   }

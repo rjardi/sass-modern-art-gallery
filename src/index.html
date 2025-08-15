@@ -4,23 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern Art Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.scss">
 </head>
 <body>
-  <header>
-    <h1><span aria-label="Modern Art Gallery">MODERN<br>ART GALLERY</span></h1>
-  </header>
   <main>
-    <section class="gallery-image" aria-label="Gallery Main Image">
-      <img src="./assets/gallery-main.png" alt="Visitors viewing modern art portrait" />
+    <section class="hero" aria-label="Gallery Main Image">
+      <div class="hero-title">
+        <h1><span aria-label="Modern Art Gallery">MODERN<br>ART GALLERY</span></h1>
+      </div> 
+      <div class="hero-action">
+        <p>The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
+        <button class="location-btn" aria-label="Our Location">
+          <div class="text">OUR LOCATION</div>
+          <div class="arrow"><img src="./assets/arrow.svg" alt=""></div>
+        </button>
+      </div>
     </section>
-    <section class="gallery-info">
-      <p>The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
-      <button class="location-btn" aria-label="Our Location">
-        <span>OUR LOCATION</span>
-        <span class="arrow" aria-hidden="true">&gt;</span>
-      </button>
-    </section>
+
   </main>
 </body>
 </html>
