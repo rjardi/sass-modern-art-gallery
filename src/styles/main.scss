@@ -4,7 +4,7 @@ $font-headings: 'Big Shoulders';
 $almost-black: #151515;
 $black: black;
 $dark-grey: #444444;
-$white: #fff;
+$white: #F5F5F5;
 $gold: #D5966C;
 
 body {
@@ -14,37 +14,35 @@ body {
 
   background:
   linear-gradient(to right, $almost-black 0 33.33vw, transparent 33.33vw) no-repeat,
-  // linear-gradient(to right, $almost-black 0 100%) no-repeat,
-  url("../assets/gallery-main.png") no-repeat;
+  url("../assets/img/gallery-main.png") no-repeat;
 
   background-size: 100% 800px, 540px 800px;
   background-position: 0 42px, 33.33vw 42px;
+  background-color: $white;
 
 }
-
 main {
   max-width: 1110px;
   margin: auto;
+
 }
 
 .hero {
-  margin-top: 230px;
+  padding-top: 230px;
   display: flex;
   flex-direction: row;
-  // padding: 190px 165px;
   justify-content: space-between;
+  height: 612px;
   
 }
   
 .hero-title {
-  // flex: 1;
   color: $white;
   display: flex;
 
 
   
   h1 {
-    /* MODERN ART GALLERY */
     margin: 0;
     font-family: $font-headings;
     font-style: normal;
@@ -58,11 +56,9 @@ main {
 }
 
 .hero-action {
-  // flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
   p {
 
     margin: 0;
@@ -77,7 +73,7 @@ main {
 
   }
 
-  .location-btn {
+  a.location-btn {
     display: flex;
     align-items: center;
     border: none;
@@ -88,7 +84,6 @@ main {
     border-radius: 0;
     transition: background 0.2s;
     padding: 0;
-    // padding: 1.5rem 0rem;
     background: $black;
     font-family: $font-headings;
     font-size: 20px;
@@ -96,7 +91,7 @@ main {
     font-style: normal;
     line-height: 24px;
     letter-spacing: 3.64px;
-    
+    text-decoration: none;
     div.text {
       color: $white;
       padding: 0 1.5rem;
@@ -116,7 +111,6 @@ main {
       background: $gold;
       outline: 1px solid $black;
       color: $black;
-      
       div.arrow {
         background: $black;
         color: $gold;
@@ -124,6 +118,116 @@ main {
     }
   }
 }
+
+section.visit-gallery {
+  display: flex;
+  flex-direction: column;
+  padding-top: 139px;
+  gap: 30px;
+
+  div.your-day{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    div.text {
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      h2{
+        font-family: $font-headings;
+        font-size: 60px;
+        color: $black;
+        font-weight: 900;
+        line-height: 60px;
+  
+      }
+      p {
+        font-size: 22px;
+        color: $dark-grey;
+        font-weight: 300;
+        line-height: 32px;
+      }
+
+    }
+    img {
+      width: 635px;
+      height: 400px;
+    }
+  }
+
+  div.inspire {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  img {
+    width: 635px;
+    height: 720px;
+  }
+  div.come-inspire {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: $white;
+    img {
+      width: 445px;
+      height: 313px;
+    }
+    div.text {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 64px 48px;
+      background-color: $black;
+      h2 {
+          margin: 0;
+          font-family: $font-headings;
+          font-size: 60px;
+          font-weight: 900;
+          line-height: 60px;
+      }
+      p {
+        margin: 0;
+        font-family: $font-paragraph;
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 32px;
+      }
+
+    }
+  }
+}
+
+footer {
+  margin-top: 180px;
+  padding: 80px 165px;
+  background-color: $almost-black;
+  div.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    max-width: 1110px;
+    margin: auto;
+    p {
+        margin: 0;
+        font-family: $font-paragraph;
+        color: $white;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 28px;
+        max-width: 430px;
+    }
+    div.social {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+    }
+
+  }
+}
+
+
+
 
 @media (max-width: 900px) {
   header {
