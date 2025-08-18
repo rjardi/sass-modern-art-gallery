@@ -1,0 +1,99 @@
+$black: #111;
+$tan: #d5966c;
+$white: #fff;
+$font-stack: 'Big Shoulders Display', sans-serif;
+
+.location-page {
+  font-family: $font-stack;
+  color: $white;
+  background: $black;
+  margin: 0;
+}
+
+/* Back Home Button */
+.back-home-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+
+  .arrow {
+    background: $tan;
+    color: $white;
+    padding: 1rem;
+  }
+  .text {
+    background: $black;
+    color: $white;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Map */
+.map-section {
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Location Info */
+.location-info {
+  display: flex;
+  padding: 4rem 2rem;
+  background: $black;
+
+  .info-left {
+    flex: 1;
+    .heading {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  }
+
+  .info-right {
+    flex: 2;
+    .address-title {
+      color: $tan;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 1.5rem;
+    }
+    p {
+      margin: 1rem 0;
+      line-height: 1.5;
+      color: $white;
+    }
+  }
+}
+
+/* Footer */
+.location-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+  background: $tan;
+  color: $black;
+
+  .logo {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 1rem;
+    color: black;  
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
