@@ -75,14 +75,13 @@ $font-stack: 'Big Shoulders Display', sans-serif;
 
 /* Footer */
 .location-footer {
-  box-sizing: border-box;
   display: flex;
   gap: 140px;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   // align-items: flex-start;
-  padding: 5rem 10rem;
+  padding: 3rem 10rem;
   background: $tan;
   color: $black;
   .logo {
@@ -90,8 +89,6 @@ $font-stack: 'Big Shoulders Display', sans-serif;
   }
 
   p{
-    font-family: "Outfit";
-    font-weight: 300;
     margin: 0;
     max-width: 430px;
   }
@@ -101,7 +98,6 @@ $font-stack: 'Big Shoulders Display', sans-serif;
     display: flex;
     gap: 1rem;
     align-self: flex-start;
-    // align-items: end;
     
     img {
         color: black;  

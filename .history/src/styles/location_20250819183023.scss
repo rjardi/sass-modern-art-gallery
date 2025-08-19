@@ -75,6 +75,7 @@ $font-stack: 'Big Shoulders Display', sans-serif;
 
 /* Footer */
 .location-footer {
+  height: 244px;
   box-sizing: border-box;
   display: flex;
   gap: 140px;
@@ -82,7 +83,7 @@ $font-stack: 'Big Shoulders Display', sans-serif;
   align-items: center;
   justify-content: space-between;
   // align-items: flex-start;
-  padding: 5rem 10rem;
+  padding: 3rem 10rem;
   background: $tan;
   color: $black;
   .logo {
@@ -100,7 +101,7 @@ $font-stack: 'Big Shoulders Display', sans-serif;
   .footer-right {
     display: flex;
     gap: 1rem;
-    align-self: flex-start;
+    // align-self: flex-start;
     // align-items: end;
     
     img {
