@@ -1,4 +1,9 @@
-@use 'variables' as *;
+@use 'variables';
+
+$black: #111;
+$tan: #d5966c;
+$white: #fff;
+$font-stack: 'Big Shoulders Display', sans-serif;
 
 .location-page {
   font-family: $font-stack;

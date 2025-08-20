@@ -1,4 +1,6 @@
-@use 'variables' as *;
+@use '_variables';
+
+
 
 .location-page {
   font-family: $font-stack;
