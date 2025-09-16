@@ -1,0 +1,44 @@
+@use './_variables.scss' as *;
+
+@mixin btn-base {
+    display: flex;
+    align-items: center;
+    border: none;
+    flex-direction: row;
+    height: 72px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 0;
+    transition: background 0.2s;
+    padding: 0;
+    background: $black;
+    font-family: $font-headings;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: 3.64px;
+    text-decoration: none;
+    .text {
+        color: $white;
+        padding: 0 1.5rem;
+    }
+    .arrow {
+        display: flex;
+        background: $gold;
+        color: $white;
+        align-items: center;
+        justify-content: center;   
+        height: 100%;
+        width: 56px;
+    }
+    &:hover, &:focus {
+        background: $gold;
+        outline: 1px solid $black;
+        color: $black;
+        .arrow {
+          background: $black;
+          color: $gold;
+        }
+    }
+  }

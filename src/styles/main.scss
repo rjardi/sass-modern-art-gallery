@@ -1,15 +1,11 @@
-$font-stack: 'Montserrat', Arial, sans-serif;
-$font-paragraph: 'Outfit';
-$font-headings: 'Big Shoulders';
-$almost-black: #151515;
-$black: black;
-$dark-grey: #444444;
-$white: #F5F5F5;
-$gold: #D5966C;
+@use './_variables.scss' as *;
+@use './_base.scss' as *;
+// @import './_base.scss';
 
 body {
   margin: 0;
   font-family: $font-stack;
+  font-style: normal;
   color: $black;
 
   background:
@@ -67,55 +63,57 @@ main {
     font-family: $font-paragraph;
     font-style: normal;
     font-size: 22px;
+    font-style: normal;
     font-weight: 300;
     line-height: 32px;
     margin-bottom: 4rem;
 
   }
 
-  a.location-btn {
-    display: flex;
-    align-items: center;
-    border: none;
-    flex-direction: row;
-    height: 72px;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 0;
-    transition: background 0.2s;
-    padding: 0;
-    background: $black;
-    font-family: $font-headings;
-    font-size: 20px;
-    font-weight: 800;
-    font-style: normal;
-    line-height: 24px;
-    letter-spacing: 3.64px;
-    text-decoration: none;
-    div.text {
-      color: $white;
-      padding: 0 1.5rem;
-    }
+  a.btn-location{
+    @include btn-base;
+    // display: flex;
+    // align-items: center;
+    // border: none;
+    // flex-direction: row;
+    // height: 72px;
+    // cursor: pointer;
+    // font-weight: 600;
+    // border-radius: 0;
+    // transition: background 0.2s;
+    // padding: 0;
+    // background: $black;
+    // font-family: $font-headings;
+    // font-size: 20px;
+    // font-weight: 800;
+    // font-style: normal;
+    // line-height: 24px;
+    // letter-spacing: 3.64px;
+    // text-decoration: none;
+    // div.text {
+    //   color: $white;
+    //   padding: 0 1.5rem;
+    // }
 
-    div.arrow {
-      display: flex;
-      background: $gold;
-      color: $white;
-      align-items: center;
-      justify-content: center;   
-      height: 100%;
-      width: 56px;
-    }
+    // div.arrow {
+    //   display: flex;
+    //   background: $gold;
+    //   color: $white;
+    //   align-items: center;
+    //   justify-content: center;   
+    //   height: 100%;
+    //   width: 56px;
+    // }
 
-    &:hover, &:focus {
-      background: $gold;
-      outline: 1px solid $black;
-      color: $black;
-      div.arrow {
-        background: $black;
-        color: $gold;
-      }
-    }
+    // &:hover, &:focus {
+    //   background: $gold;
+    //   outline: 1px solid $black;
+    //   color: $black;
+    //   div.arrow {
+    //     background: $black;
+    //     color: $gold;
+    //   }
+    // }
   }
 }
 
@@ -139,9 +137,12 @@ section.visit-gallery {
         color: $black;
         font-weight: 900;
         line-height: 60px;
+        margin-bottom: 1rem;
   
       }
       p {
+        font-family: $font-paragraph;
+        font-style: normal;
         font-size: 22px;
         color: $dark-grey;
         font-weight: 300;
@@ -189,6 +190,7 @@ section.visit-gallery {
       p {
         margin: 0;
         font-family: $font-paragraph;
+        font-style: normal;
         font-size: 22px;
         font-weight: 300;
         line-height: 32px;
