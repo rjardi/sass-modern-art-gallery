@@ -42,8 +42,10 @@
 /* Location Info */
 .location-info {
   display: flex;
-  padding: 4rem 10rem;
-  background: $black;
+  padding: 6rem 10rem;
+  background: $almost-black;
+  gap: 18rem;
+  justify-content: space-between;
 
   .info-left {
     flex: 1;
@@ -58,15 +60,19 @@
   .info-right {
     flex: 2;
     .address-title {
+      font-family: $font-headings;
+      font-size: 2rem;
       color: $tan;
       text-transform: uppercase;
       font-weight: 900;
-      font-size: 1.5rem;
     }
     p {
       margin: 1rem 0;
       line-height: 1.5;
       color: $white;
+      font-size: 1.3rem;
+      font-weight: 200;
+      font-family: $font-paragraph;
     }
   }
 }
@@ -92,6 +98,9 @@
     font-weight: 300;
     margin: 0;
     max-width: 430px;
+    font-size: 1.2rem;
+    font-weight: 200;
+    font-family: $font-paragraph;
   }
 
 
