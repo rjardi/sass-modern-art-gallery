@@ -5,23 +5,27 @@ body {
   font-family: $font-stack;
   color: $black;
 
-  background:
-  linear-gradient(to right, $almost-black 0 33.33vw, transparent 33.33vw) no-repeat,
-  url("../assets/img/gallery-main.png") no-repeat;
-
-  background-size: 100% 800px, 540px 800px;
-  background-position: 0 42px, 33.33vw 42px;
-  background-color: $white;
-
+  
 }
 main {
-  max-width: 1110px;
+  max-width: 1440px;
   margin: auto;
-
+  
 }
 
 .hero {
-  padding-top: 230px;
+  background:
+    linear-gradient(to right, 
+    $almost-black 0 450px, 
+    transparent 450px 990px, 
+    transparent 990px
+    ) no-repeat,
+  url("../assets/img/gallery-main.png") no-repeat;
+  
+  background-size: 100% 800px, 540px 800px;
+  background-position: 0 42px, 450px 42px; /* Cambiar 32% por 450px */
+  background-color: $white;
+  padding: 230px 165px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -32,8 +36,6 @@ main {
 .hero-title {
   color: $white;
   display: flex;
-
-
   
   h1 {
     margin: 0;
@@ -143,8 +145,10 @@ section.visit-gallery {
 
     }
     img {
-      width: 635px;
-      height: 400px;
+      width: 100%;
+      max-width: 635px;       // Tamaño máximo en desktop
+      height: auto;
+      object-fit: cover;
     }
   }
 
@@ -154,8 +158,10 @@ section.visit-gallery {
     gap: 30px;
   }
   img {
-    width: 635px;
-    height: 720px;
+    width: 100%;
+    max-width: 635px;
+    height: auto;
+    object-fit: cover;
   }
   div.come-inspire {
     display: flex;
@@ -163,8 +169,10 @@ section.visit-gallery {
     gap: 30px;
     color: $white;
     img {
-      width: 445px;
-      height: 313px;
+      width: 100%;
+      max-width: 445px;
+      height: auto;
+      object-fit: cover;
     }
     div.text {
       display: flex;
@@ -198,7 +206,7 @@ footer {
   div.footer-container {
     display: flex;
     justify-content: space-between;
-    gap: 150px;
+    gap: 2.5rem;
     max-width: 1110px;
     margin: auto;
     p {
@@ -214,6 +222,9 @@ footer {
       display: flex;
       align-items: start;
       gap: 20px;
+    }
+    img.logo {
+      align-self: start;
     }
 
   }
