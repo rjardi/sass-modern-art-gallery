@@ -2,8 +2,9 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path'
 
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/sass-modern-art-gallery/' : '/',
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
