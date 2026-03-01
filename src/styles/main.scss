@@ -25,12 +25,17 @@ main {
   background-size: 100% 800px, 540px 800px;
   background-position: 0 42px, 450px 42px; /* Cambiar 32% por 450px */
   background-color: $white;
-  padding: 230px 165px;
+  padding: 230px 165px 0 165px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 612px;
+  gap: 32px;
   
+  /* Imagen mobile - oculta por defecto */
+  .hero-image-mobile {
+    display: none;
+  }
 }
   
 .hero-title {
@@ -46,7 +51,6 @@ main {
     line-height: 88px;
     text-transform: uppercase;
     color: #FFFFFF;
-    letter-spacing: 2px;
   }
 }
 
@@ -117,13 +121,14 @@ main {
 section.visit-gallery {
   display: flex;
   flex-direction: column;
-  padding-top: 139px;
+  padding: 139px 165px;
   gap: 30px;
 
   div.your-day{
     justify-content: space-between;
     display: flex;
     flex-direction: row;
+    gap: 32px;
     div.text {
       max-width: 350px;
       display: flex;
@@ -137,18 +142,22 @@ section.visit-gallery {
   
       }
       p {
-        font-size: 22px;
+        font-family: $font-paragraph; // Outfit
+        font-size: 18px;
         color: $dark-grey;
-        font-weight: 300;
-        line-height: 32px;
+        font-weight: 300; // light
+        line-height: 28px;
       }
 
     }
-    img {
+    div.your-day-img {
       width: 100%;
-      max-width: 635px;       // Tamaño máximo en desktop
-      height: auto;
-      object-fit: cover;
+      max-width: 635px;
+      img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
     }
   }
 
@@ -157,11 +166,14 @@ section.visit-gallery {
     flex-direction: row;
     gap: 30px;
   }
-  img {
+  div.inspire-img {
     width: 100%;
     max-width: 635px;
-    height: auto;
-    object-fit: cover;
+    img {
+      width: 100%;
+      height: 720px;
+      object-fit: cover;
+    }
   }
   div.come-inspire {
     display: flex;
@@ -233,31 +245,305 @@ footer {
 
 
 
-@media (max-width: 900px) {
-  header {
-    width: 100vw;
-    height: 20vh;
-    position: static;
+// ── Tablet (≤ 768px) ──────────────────────────────────────────
+@media (max-width: 768px) {
+
+  .hero {
+    // Solo imagen a la izquierda, sin gradiente negro
+    background: url("../assets/img/gallery-main.png") no-repeat 0 0;
+    background-size: 437px 700px;
+    background-color: $white;
+
+    // El contenido empieza en x:389px, y:145px según Figma
+    padding: 145px 40px 0 389px;
+    box-sizing: border-box;
+    height: 700px;
+
+    // Apilar hero-title + hero-action en columna
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 48px; // espacio entre h1 y la sección p+botón
+  }
+
+  .hero-title {
     h1 {
-      margin-left: 2vw;
-      font-size: 2.5rem;
+      color: $almost-black; // oscuro sobre fondo blanco
+      font-size: 70px;
+      line-height: 65px;
     }
   }
-  main {
-    flex-direction: column;
-    margin-left: 0;
-    align-items: stretch;
-  }
-  .gallery-image, .gallery-info {
-    flex: none;
-    padding: 2rem 0;
-    align-items: center;
-    text-align: center;
-  }
-  .gallery-info {
-    padding-left: 0;
+
+  .hero-action {
     p {
-      margin: 0 auto 2rem auto;
+      font-family: $font-paragraph; // Outfit
+      font-size: 18px;
+      font-weight: 300; // light
+      line-height: 28px;
+      max-width: 339px;
+      margin-bottom: 3rem; // ~48px entre párrafo y botón
+    }
+  }
+
+  // ── Visit Gallery section ──────────────────────────────────
+  section.visit-gallery {
+    padding: 72px 40px;
+    gap: 11px; // gap entre your-day y inspire (figma: 411 - 400 = 11px)
+
+    div.your-day {
+      align-items: flex-start;
+
+      div.text {
+        max-width: 223px;
+        
+        h2 {
+          font-size: 50px;
+          line-height: 45px;
+          margin-top: 24px;
+          margin-bottom: 24px;
+        }
+
+        p {
+          font-family: $font-paragraph; // Outfit
+          font-size: 18px;
+          font-weight: 300; // light
+          line-height: 28px;
+        }
+      }
+
+      img {
+        width: 398px;
+        height: 400px;
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+    }
+
+    div.inspire {
+      gap: 11px; // gap entre columnas (figma: 409 - 398 = 11px)
+      align-items: flex-start;
+
+      & > img { // gallery-2.jpg (columna izquierda)
+        width: 398px;
+        height: 720px;
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+    }
+
+    div.come-inspire {
+      width: 280px;
+      flex-shrink: 0;
+      gap: 11px; // gap entre gallery-3.jpg y caja negra (735-724 = 11px)
+
+      img { // gallery-3.jpg
+        width: 280px;
+        height: 313px;
+        object-fit: cover;
+      }
+
+      div.text {
+        // padding: top:85px left/right:29px según offset figma (438-409, 820-735)
+        padding: 85px 29px 40px;
+        gap: 24px; // gap entre h2 y p
+        min-height: 396px;
+        box-sizing: border-box;
+
+        h2 {
+          font-size: 50px;
+          line-height: 45px;
+        }
+
+        p {
+          font-family: $font-paragraph; // Outfit
+          font-size: 18px;
+          font-weight: 300; // light
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  // ── Footer ────────────────────────────────────────────────
+  footer {
+    margin-top: 48px; // distancia respecto a la última imagen
+    padding: 56px 39px; // top: 56px, horizontal: 39px según Figma
+
+    div.footer-container {
+      p {
+        font-family: $font-paragraph; // Outfit
+        font-size: 16px;
+        line-height: 26px;
+        max-width: 281px;
+        font-weight: 300; // light
+      }
+
+      div.social {
+        gap: 20px; // gap entre iconos (589→609→629→649→669px)
+
+        img {
+          width: 20px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+// ── Mobile (≤ 480px) ──────────────────────────────────────────
+@media (max-width: 480px) {
+
+  .hero {
+    // Sin background-image en mobile, usamos elemento <img>
+    background: none;
+    background-color: $white;
+
+    // Padding horizontal 16px, sin padding-top (la imagen está arriba)
+    padding: 0 16px 0;
+    box-sizing: border-box;
+    height: 630px;
+
+    // Apilar en columna
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 32px; // gap entre imagen y hero-title, y entre hero-title y hero-action
+
+    // Mostrar imagen mobile
+    .hero-image-mobile {
+      display: block;
+      width: calc(100% + 32px); // compensa el padding horizontal del contenedor
+      height: 240px;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 -16px; // se sale del padding para ser full-width
+      padding: 0;
+    }
+  }
+
+  .hero-title {
+    h1 {
+      color: $almost-black;
+      font-size: 60px;
+      line-height: 55px;
+    }
+  }
+
+  .hero-action {
+    p {
+      font-family: $font-paragraph; // Outfit
+      font-size: 18px;
+      font-weight: 300; // light
+      line-height: 28px;
+      max-width: 343px;
+      margin-bottom: 32px; // gap entre p y botón (figma: 558-526=32px)
+    }
+  }
+
+  // ── Visit Gallery section ──────────────────────────────────
+  section.visit-gallery {
+    padding: 72px 16px; // padding horizontal reducido para mobile
+    gap: 24px; // gap más pequeño entre secciones
+
+    div.your-day {
+      flex-direction: column; // apilar texto e imagen en columna
+      gap: 24px;
+      align-items: stretch;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        order: 1; // imagen primero
+      }
+
+      div.text {
+        max-width: 100%; // texto ocupa todo el ancho disponible
+        order: 2; // texto después de la imagen
+
+        h2 {
+          font-size: 50px; // tamaño reducido para mobile
+          line-height: 45px;
+        }
+
+        p {
+          font-family: $font-paragraph; // Outfit
+          font-size: 18px;
+          font-weight: 300; // light
+          line-height: 28px;
+        }
+      }
+    }
+
+    div.inspire {
+      flex-direction: column; // apilar imagen y come-inspire en columna
+      gap: 24px;
+      align-items: stretch;
+
+      & > img { // gallery-2.jpg
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        order: 1; // imagen primero
+      }
+    }
+
+    div.come-inspire {
+      width: 100%; // ocupa todo el ancho
+      flex-direction: column;
+      gap: 24px;
+      order: 2; // después de gallery-2.jpg
+
+      img { // gallery-3.jpg
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+
+      div.text {
+        padding: 48px 24px; // padding reducido para mobile
+        width: 100%;
+        min-height: auto !important; // anular min-height de tablet
+
+        h2 {
+          font-size: 50px;
+          line-height: 45px;
+        }
+
+        p {
+          font-family: $font-paragraph; // Outfit
+          font-size: 18px;
+          font-weight: 300; // light
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  // ── Footer ────────────────────────────────────────────────
+  body > main + footer,
+  footer {
+    padding: 48px 32px; // padding vertical: 48px, horizontal: 32px
+    margin-top: 48px;
+    box-sizing: border-box;
+
+    div.footer-container {
+      flex-direction: column; // apilar logo, texto e iconos en columna
+      gap: 38px; // gap entre elementos
+      align-items: flex-start;
+
+      p {
+        font-family: $font-paragraph; // Outfit
+        max-width: 100%;
+        font-size: 16px;
+        font-weight: 300; // light
+        line-height: 26px;
+        margin: 0;
+      }
+
+      div.social {
+        gap: 20px;
+      }
     }
   }
 }

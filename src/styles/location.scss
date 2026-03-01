@@ -9,25 +9,52 @@
 /* Back Home Button */
 .back-home-btn {
   position: absolute;
-  background: $black;
-  width: 264px;
   margin-left: 165px;
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1rem;
+  height: 64px;
+  transition: all 0.2s;
 
-  .arrow {
+  div.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: $tan;
     color: $white;
-    padding: 1rem;
+    height: 100%;
+    width: 56px;
+    flex-shrink: 0;
+
+    img {
+      width: 10px;
+      height: 25px;
+    }
   }
-  .text {
-    background: $black;
+
+  div.text {
+    background: $almost-black;
     color: $white;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
+    font-family: $font-headings;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 64px;
+    letter-spacing: 3.64px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &:hover,
+  &:focus {
+    div.arrow {
+      background: $almost-black;
+    }
+    div.text {
+      background: $tan;
+      color: $white;
+    }
   }
 }
 
@@ -44,21 +71,23 @@
   display: flex;
   padding: 6rem 10rem;
   background: $almost-black;
-  gap: 18rem;
+  gap: 68px;
   justify-content: space-between;
 
   .info-left {
     flex: 1;
     .heading {
+      margin-top: 32px;
       font-family: $font-headings;
-      font-size: 4rem;
+      font-size: 70px;
       text-transform: uppercase;
       font-weight: 900;
+      max-width: 350px;
     }
   }
 
   .info-right {
-    flex: 2;
+    flex: 1;
     .address-title {
       font-family: $font-headings;
       font-size: 2rem;
@@ -81,39 +110,221 @@
 .location-footer {
   box-sizing: border-box;
   display: flex;
-  gap: 140px;
+  gap: 32px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  // align-items: flex-start;
   padding: 5rem 10rem;
   background: $tan;
   color: $black;
+
   .logo {
     margin: 0;
   }
 
-  p{
-    font-family: "Outfit";
-    font-weight: 300;
+  p {
+    font-family: $font-paragraph;
+    font-weight: 200;
     margin: 0;
     max-width: 430px;
     font-size: 1.2rem;
-    font-weight: 200;
-    font-family: $font-paragraph;
   }
-
 
   .footer-right {
     display: flex;
     gap: 1rem;
     align-self: flex-start;
-    // align-items: end;
-    
+
     img {
-        color: black;  
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// ── Tablet (≤ 768px) ──────────────────────────────────────────
+@media (max-width: 768px) {
+
+  /* Back to Home button */
+  .back-home-btn {
+    margin-left: 39px;
+    height: 72px;
+
+    div.text {
+      line-height: 72px;
+    }
+  }
+
+  /* Map */
+  .map-section {
+    img {
+      height: 600px;
+      object-fit: cover;
+      object-position: center;
+    }
+    }
+
+  /* Location Info */
+  .location-info {
+    padding: 88px 39px;
+    gap: 68px;
+    justify-content: flex-start;
+
+    .info-left {
+      flex: 1;
+      // width: 223px;
+
+      .heading {
+        font-size: 55px;
+        line-height: 50px;
+        margin: 0;
+      }
+    }
+
+    .info-right {
+      flex: 1;
+      // width: 398px;
+
+      .address-title {
+        font-size: 32px;
+        line-height: 32px;
+        margin: 0 0 20px;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        margin: 0 0 28px;
+      }
+
+      p.description {
+        margin: 0;
+      }
+    }
+  }
+
+  /* Footer */
+  .location-footer {
+    padding: 56px 39px;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      max-width: 281px;
+      color: $almost-black;
+      margin: 0;
+    }
+
+    .footer-right {
+      align-self: center;
+      gap: 20px;
+
+      img {
         width: 20px;
-        height: 20px;
+        height: auto;
+      }
+    }
+  }
+}
+
+// ── Mobile (≤ 480px) ──────────────────────────────────────────
+@media (max-width: 480px) {
+
+  /* Back to Home button */
+  .back-home-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0; // sin margin
+    height: 72px;
+    z-index: 10; // asegurar que esté por encima
+
+    div.text {
+      line-height: 72px;
+    }
+  }
+
+  /* Map */
+  .map-section {
+    img {
+      height: 600px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  /* Location Info */
+  .location-info {
+    flex-direction: column; // apilar elementos en columna
+    padding: 48px 16px; // mismo padding que footer mobile
+    gap: 48px; // gap entre elementos
+
+    .info-left {
+      width: 100%;
+
+      .heading {
+        font-size: 50px;
+        line-height: 45px;
+        margin: 0;
+      }
+    }
+
+    .info-right {
+      width: 100%;
+
+      .address-title {
+        font-size: 32px;
+        line-height: 32px;
+        margin: 0 0 20px;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 28px;
+        margin: 0 0 24px;
+      }
+
+      p.description {
+        margin: 0;
+      }
+    }
+  }
+
+  /* Footer */
+  .location-footer {
+    padding: 48px 32px; // mismo padding que home mobile
+    flex-direction: column; // apilar en columna
+    gap: 38px; // mismo gap que home mobile
+    align-items: flex-start;
+
+    .logo {
+      margin: 0;
+    }
+
+    p {
+      font-family: $font-paragraph;
+      max-width: 100%;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 26px;
+      margin: 0;
+      color: $black; // texto negro sobre fondo dorado
+    }
+
+    .footer-right {
+      align-self: flex-start;
+      gap: 20px;
+
+      img {
+        width: 20px;
+        height: auto;
+      }
     }
   }
 }
